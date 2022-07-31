@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+      <div class="col">
+        {% for category in category_list %}
+            <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock main %}

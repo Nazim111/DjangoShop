@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+<head>
+    {% include 'core/components/header.html' %}
+</head>
+
+<body>
+    <main>
+        {% block nav %}
+        {% endblock nav %}
+        {% block main %}
+        {% endblock main %}
+    </main>
+
+    <footer>
+        {% include 'core/components/footer.html' %}
+    </footer>
+</body>
+</html>

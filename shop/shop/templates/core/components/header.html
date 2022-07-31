@@ -1,0 +1,40 @@
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django Shop Category</title>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.css.map' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap-grid.css.map' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap.min.css.map' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bootstrap-grid.min.css.map' %}" rel="stylesheet" type="text/css">
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js.map' %}"></script>
+</head>
+<body>
+{% block nav %}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'core:index' %}">Shop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'core:product_list' %}">All Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'core:category_list' %}">Categories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div class="p"></div>
+{% endblock nav %}
+</body>

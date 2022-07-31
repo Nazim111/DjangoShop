@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <p>Categories</p>
+                <ul>
+                    {% for category in category_list %}
+                        Products: {{ category.title }}
+                        {% for product in category.product_set.all %}
+                            <li>{{ product.title }}, {{ product.price }}. {{ product.category.title }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <p>Products</p>
+                <ul>
+                    {% for product in product_list %}
+                    <li>{{ product.title }}, {{ product.price }}. {{ product.category.title }}</li>
+                        {% for tag in product.tag.all %}
+                            {{ tag }},
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+</body>
+</html>
